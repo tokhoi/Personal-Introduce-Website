@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chrono-Scroll Portfolio v2</title>
+    <link rel="stylesheet" href="/Colorful day/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="intro-screen">
+      <h1 id="greeting">Chào bạn!</h1>
+      <p>Đây là hành trình của [Tên Bạn]</p>
+      <div class="scroll-indicator"></div>
+    </div>
+
+    <main class="timeline-container">
+      <section class="chapter" data-year="2022" data-bg-color="#16213e">
+        <div class="chapter-content">
+          <h2>Bước ngoặt: 2022</h2>
+          <h3>Dự án cá nhân đầu tiên</h3>
+          <p>
+            Một ứng dụng quản lý công việc, đánh dấu lần đầu biến ý tưởng thành
+            sản phẩm thực tế.
+          </p>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="https://picsum.photos/600/350?random=1"
+                  alt="Project Image"
+                />
+              </div>
+              <div class="flip-card-back">
+                <h4>Công nghệ sử dụng</h4>
+                <ul>
+                  <li><i class="fab fa-react"></i> React</li>
+                  <li><i class="fab fa-node-js"></i> Node.js</li>
+                  <li><i class="fas fa-database"></i> MongoDB</li>
+                </ul>
+                <button
+                  class="cta-button open-modal"
+                  data-title="Ứng dụng Quản lý Công việc"
+                  data-content="Đây là mô tả chi tiết về dự án quản lý công việc. Dự án này giúp giải quyết vấn đề XYZ bằng cách áp dụng công nghệ ABC..."
+                >
+                  Xem Case Study
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" data-year="2024" data-bg-color="#0f3460">
+        <div class="chapter-content">
+          <h2>Tăng tốc: 2024</h2>
+          <h3>Website Thương mại Điện tử</h3>
+          <p>
+            Xây dựng một hệ thống e-commerce hoàn chỉnh với nhiều tính năng phức
+            tạp.
+          </p>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="https://picsum.photos/600/350?random=2"
+                  alt="Project Image"
+                />
+              </div>
+              <div class="flip-card-back">
+                <h4>Công nghệ sử dụng</h4>
+                <ul>
+                  <li><i class="fab fa-laravel"></i> Laravel</li>
+                  <li><i class="fab fa-vuejs"></i> Vue.js</li>
+                  <li><i class="fas fa-database"></i> MySQL</li>
+                </ul>
+                <button
+                  class="cta-button open-modal"
+                  data-title="Website Thương mại Điện tử"
+                  data-content="Dự án này là một hệ thống e-commerce được xây dựng để tối ưu hóa trải nghiệm người dùng và quy trình quản lý kho hàng. Các tính năng nổi bật bao gồm..."
+                >
+                  Xem Case Study
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="timeline-scrollbar">
+      <div class="timeline-progress"></div>
+      <div class="timeline-markers"></div>
+    </div>
+
+    <div class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        <h2 id="modal-title">Tiêu đề Case Study</h2>
+        <p id="modal-body">
+          Nội dung chi tiết của case study sẽ được hiển thị ở đây.
+        </p>
+      </div>
+    </div>
+
+    <script src="/Colorful day/Javascripts/Scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+:root {
+  --background-color: #1a1a2e;
+  --accent-color: #e94560;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  background-color: var(--background-color);
+  color: #e0e0e0;
+  transition: background-color 1s ease;
+  overflow-x: hidden;
+}
+
+.intro-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: opacity 1s ease;
+}
+.intro-screen h1 {
+  font-size: 4rem;
+}
+.scroll-indicator {
+  width: 2px;
+  height: 50px;
+  background: white;
+  margin-top: 30px;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.timeline-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+
+.chapter {
+  min-height: 80vh;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chapter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chapter-content {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+.chapter-content h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+}
+.chapter-content h3 {
+  font-size: 1.5rem;
+}
+
+/* THẺ LẬT 3D */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 350px;
+  perspective: 1000px; /* Cần cho hiệu ứng 3D */
+  margin-top: 20px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.flip-card-back {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flip-card-back ul {
+  list-style: none;
+  padding: 0;
+}
+.flip-card-back li {
+  margin: 10px 0;
+}
+.flip-card-back i {
+  margin-right: 10px;
+  color: var(--accent-color);
+}
+.cta-button {
+  display: inline-block;
+  background: var(--accent-color);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+/* THANH TIMELINE */
+.timeline-scrollbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+.timeline-progress {
+  height: 4px;
+  background: var(--accent-color);
+  width: 0%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.timeline-markers {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.marker {
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+.marker::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 100;
+}
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-content {
+  background: #34495e;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.4s ease;
+}
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
