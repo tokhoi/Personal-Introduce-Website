@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- 1. Lời chào cá nhân hóa ---
   const greetingElement = document.getElementById("greeting");
   const currentHour = new Date().getHours();
   if (currentHour < 12) {

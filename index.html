@@ -3,55 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chrono-Scroll Portfolio v2</title>
-    <link rel="stylesheet" href="colorful-day/style.css" />
+    <title>Chrono-Scroll Portfolio - Enhanced</title>
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='50%25' font-size='50' text-anchor='middle' dominant-baseline='central'%3E🚀%3C/text%3E%3C/svg%3E"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Montserrat:wght@700&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
+    <link rel="stylesheet" href="colorful-day/style.css" />
   </head>
   <body>
+    <div class="loading-screen">
+      <div class="spinner"></div>
+      <p>Đang tải trải nghiệm...</p>
+    </div>
+
+    <div class="cursor-trail"></div>
+
     <div class="intro-screen">
       <h1 id="greeting">Chào bạn!</h1>
-      <p>Đây là hành trình của [Tên Bạn]</p>
+      <p>Đây là hành trình phát triển của [Tên Bạn]</p>
       <div class="scroll-indicator"></div>
     </div>
 
     <main class="timeline-container">
-      <section class="chapter" data-year="2022" data-bg-color="#16213e">
+      <section class="chapter" data-year="2020" data-bg-color="#0F1B2C">
+        <div class="chapter-content">
+          <h2>Khởi đầu: 2020</h2>
+          <h3>Những dòng code đầu tiên</h3>
+          <p>
+            Hành trình bắt đầu với niềm đam mê dành cho công nghệ và quyết tâm
+            theo đuổi ngành lập trình web. Từ những kiến thức cơ bản nhất về
+            HTML, CSS, JavaScript, tôi đã dần hình thành tư duy logic và khả
+            năng giải quyết vấn đề.
+          </p>
+          <div class="image-parallax-container">
+            <img
+              src="https://picsum.photos/800/450?random=21"
+              alt="Code setup"
+              class="parallax-image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" data-year="2022" data-bg-color="#1A2A3D">
         <div class="chapter-content">
           <h2>Bước ngoặt: 2022</h2>
-          <h3>Dự án cá nhân đầu tiên</h3>
+          <h3>Dự án cá nhân đầu tiên: Ứng dụng Quản lý Công việc</h3>
           <p>
-            Một ứng dụng quản lý công việc, đánh dấu lần đầu biến ý tưởng thành
-            sản phẩm thực tế.
+            Một ứng dụng quản lý công việc, đánh dấu lần đầu tiên biến ý tưởng
+            thành sản phẩm thực tế. Dự án này giúp tôi củng cố kiến thức về
+            React và cách quản lý trạng thái hiệu quả.
           </p>
 
-          <div class="flip-card">
+          <div class="flip-card interactive-element">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <img
                   src="https://picsum.photos/600/350?random=1"
-                  alt="Project Image"
+                  alt="Project 1 Image"
                 />
+                <div class="project-title-overlay">
+                  Ứng dụng Quản lý Công việc
+                </div>
               </div>
               <div class="flip-card-back">
                 <h4>Công nghệ sử dụng</h4>
                 <ul>
-                  <li><i class="fab fa-react"></i> React</li>
-                  <li><i class="fab fa-node-js"></i> Node.js</li>
-                  <li><i class="fas fa-database"></i> MongoDB</li>
+                  <li><i class="fab fa-react animated-icon"></i> React</li>
+                  <li>
+                    <i class="fab fa-node-js animated-icon"></i> Node.js
+                    (Express)
+                  </li>
+                  <li><i class="fas fa-database animated-icon"></i> MongoDB</li>
                 </ul>
                 <button
-                  class="cta-button open-modal"
+                  class="cta-button open-modal interactive-element"
                   data-title="Ứng dụng Quản lý Công việc"
-                  data-content="Đây là mô tả chi tiết về dự án quản lý công việc. Dự án này giúp giải quyết vấn đề XYZ bằng cách áp dụng công nghệ ABC..."
+                  data-image="https://picsum.photos/800/500?random=11"
+                  data-content="<p>Dự án này là một ứng dụng quản lý công việc toàn diện, cho phép người dùng tạo, chỉnh sửa, xóa và theo dõi tiến độ các tác vụ. Tôi đã sử dụng React cho frontend, xây dựng API RESTful với Node.js và Express, và lưu trữ dữ liệu trong MongoDB. Đây là dự án đầu tiên tôi tự mình thực hiện toàn bộ stack.</p><ul><li><strong>Thách thức:</strong> Xử lý đồng bộ hóa trạng thái giữa các component.</li><li><strong>Giải pháp:</strong> Sử dụng Context API/Redux để quản lý trạng thái global.</li><li><strong>Kết quả:</strong> Một ứng dụng ổn định, trực quan, giúp người dùng tổ chức công việc hiệu quả.</li></ul>"
                 >
                   Xem Case Study
                 </button>
@@ -61,39 +105,76 @@
         </div>
       </section>
 
-      <section class="chapter" data-year="2024" data-bg-color="#0f3460">
+      <section class="chapter" data-year="2023" data-bg-color="#253F5C">
         <div class="chapter-content">
-          <h2>Tăng tốc: 2024</h2>
-          <h3>Website Thương mại Điện tử</h3>
+          <h2>Phát triển: 2023</h2>
+          <h3>Website Thương mại Điện tử: Dự án Đồ án tốt nghiệp</h3>
           <p>
             Xây dựng một hệ thống e-commerce hoàn chỉnh với nhiều tính năng phức
-            tạp.
+            tạp như quản lý sản phẩm, giỏ hàng, thanh toán, và quản lý người
+            dùng.
           </p>
 
-          <div class="flip-card">
+          <div class="flip-card interactive-element">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <img
                   src="https://picsum.photos/600/350?random=2"
-                  alt="Project Image"
+                  alt="Project 2 Image"
                 />
+                <div class="project-title-overlay">
+                  Website Thương mại Điện tử
+                </div>
               </div>
               <div class="flip-card-back">
                 <h4>Công nghệ sử dụng</h4>
                 <ul>
-                  <li><i class="fab fa-laravel"></i> Laravel</li>
-                  <li><i class="fab fa-vuejs"></i> Vue.js</li>
-                  <li><i class="fas fa-database"></i> MySQL</li>
+                  <li><i class="fab fa-laravel animated-icon"></i> Laravel</li>
+                  <li><i class="fab fa-vuejs animated-icon"></i> Vue.js</li>
+                  <li><i class="fas fa-database animated-icon"></i> MySQL</li>
                 </ul>
                 <button
-                  class="cta-button open-modal"
+                  class="cta-button open-modal interactive-element"
                   data-title="Website Thương mại Điện tử"
-                  data-content="Dự án này là một hệ thống e-commerce được xây dựng để tối ưu hóa trải nghiệm người dùng và quy trình quản lý kho hàng. Các tính năng nổi bật bao gồm..."
+                  data-image="https://picsum.photos/800/500?random=12"
+                  data-content="<p>Dự án này là một hệ thống e-commerce được xây dựng để tối ưu hóa trải nghiệm người dùng và quy trình quản lý kho hàng. Tôi đã sử dụng Laravel cho backend, Vue.js cho frontend để tạo ra giao diện động và tương tác, cùng với MySQL cho cơ sở dữ liệu.</p><ul><li><strong>Tính năng chính:</strong> Giỏ hàng động, quy trình thanh toán tích hợp, bảng điều khiển quản trị sản phẩm.</li><li><strong>Thách thức:</strong> Tối ưu hóa hiệu suất database và bảo mật giao dịch.</li><li><strong>Kết quả:</strong> Một nền tảng mua sắm trực tuyến mạnh mẽ, có khả năng mở rộng.</li></ul>"
                 >
                   Xem Case Study
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" data-year="Hiện tại" data-bg-color="#E94560">
+        <div class="chapter-content">
+          <h2>Hiện tại & Tương lai</h2>
+          <h3>Sẵn sàng hợp tác & Học hỏi</h3>
+          <p>
+            Luôn tìm kiếm cơ hội để học hỏi những công nghệ mới, đóng góp vào
+            các dự án ý nghĩa và giải quyết những vấn đề thực tế bằng lập trình.
+            Tôi tin vào việc học hỏi không ngừng và chia sẻ kiến thức.
+          </p>
+          <div class="contact-section">
+            <p>Liên hệ với tôi qua:</p>
+            <a
+              href="mailto:your.email@example.com"
+              class="contact-link interactive-element"
+              ><i class="fas fa-envelope"></i> Email</a
+            >
+            <a
+              href="https://github.com/tokhoi"
+              target="_blank"
+              class="contact-link interactive-element"
+              ><i class="fab fa-github"></i> GitHub</a
+            >
+            <a
+              href="https://linkedin.com/in/yourprofile"
+              target="_blank"
+              class="contact-link interactive-element"
+              ><i class="fab fa-linkedin"></i> LinkedIn</a
+            >
           </div>
         </div>
       </section>
@@ -106,14 +187,20 @@
 
     <div class="modal-overlay">
       <div class="modal-content">
-        <button class="close-modal">&times;</button>
+        <button class="close-modal interactive-element">&times;</button>
         <h2 id="modal-title">Tiêu đề Case Study</h2>
-        <p id="modal-body">
+        <img
+          id="modal-image"
+          src=""
+          alt="Case Study Image"
+          class="modal-project-image"
+        />
+        <div id="modal-body">
           Nội dung chi tiết của case study sẽ được hiển thị ở đây.
-        </p>
+        </div>
       </div>
     </div>
 
-    <script src="colorful-day/Javascripts/Scripts.js"></script>
+    <script src="colorful-day/javascripts/script.js"></script>
   </body>
 </html>
